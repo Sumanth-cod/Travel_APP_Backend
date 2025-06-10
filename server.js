@@ -1,6 +1,6 @@
 const  express = require("express");
 const app=express();
-const port=3000;
+
 const mongoose=require("mongoose");
 const dotenv=require('dotenv');
 dotenv.config();
@@ -31,9 +31,12 @@ app.use('/api/hotels',singlehotelrouter)
 app.use('/api/auth',authrouter);
 app.use('/api/wishlist',Wishlistrouter)
 
-app.listen(port,()=>{
-    console.log(`Server is running at port http://localhost:${port}`);
-})
+const PORT = process.env.port || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 
 
