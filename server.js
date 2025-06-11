@@ -18,10 +18,10 @@ app.use(express.json())
 
 
 connectDB();
-app.get("/",(req,res)=>{
-    // res.send("helo world");
+// app.get("/",(req,res)=>{
+//     // res.send("helo world");
     
-})
+// })
 
 app.use("/api/hotels",hotelrouter);//to get hotel data
 app.use("/api/category",categoryrouter);//to get hotel data
